@@ -10,7 +10,6 @@ API RESTful que proporciona información actualizada sobre la Liga Española de 
 
 - [Características](#-características)
 - [Requisitos](#-requisitos)
-- [Instalación](#-instalación)
 - [Uso](#-uso)
 - [Endpoints](#-endpoints)
 - [Ejemplos](#-ejemplos)
@@ -36,6 +35,8 @@ La API está disponible en `api-futbol-espana.p.rapidapi.com`. Todas las respues
 
 ```http
 Accept: application/json
+```
+```API URL:https://rapidapi.com/obesatoy/api/api-futbol-espana
 ```
 
 ## 🔌 Endpoints
