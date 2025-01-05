@@ -36,7 +36,7 @@ La API está disponible en `api-futbol-espana.p.rapidapi.com`. Todas las respues
 ```http
 Accept: application/json
 ```
-```API URL:https://rapidapi.com/obesatoy/api/api-futbol-espana
+```API https://rapidapi.com/obesatoy/api/api-futbol-espana
 ```
 
 ## 🔌 Endpoints
