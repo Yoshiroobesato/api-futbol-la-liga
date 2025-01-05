@@ -2,7 +2,7 @@
 
 API RESTful que proporciona información actualizada sobre la Liga Española de Fútbol, incluyendo tabla de posiciones, calendario de partidos y plantillas de equipos.
 
-[![API Status](https://img.shields.io/badge/status-active-success.svg)](https://ultratv.neocities.org)
+[![API Status](https://img.shields.io/badge/status-active-success.svg)](https://rapidapi.com/obesatoy/api/api-futbol-espana)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Documentation](https://img.shields.io/badge/docs-OpenAPI-green.svg)](https://ultratv.neocities.org/docs)
 
@@ -28,33 +28,11 @@ API RESTful que proporciona información actualizada sobre la Liga Española de 
 - Manejo de errores estandarizado
 - Documentación completa con OpenAPI
 
-## 🛠 Requisitos
 
-- Node.js 14.x o superior
-- npm o yarn
-- Acceso a internet para las consultas web
-
-## 💻 Instalación
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/yourusername/ultratv-laliga-api.git
-
-# Instalar dependencias
-cd ultratv-laliga-api
-npm install
-
-# Configurar variables de entorno
-cp .env.example .env
-# Editar .env con tus configuraciones
-
-# Iniciar el servidor
-npm start
-```
 
 ## 📚 Uso
 
-La API está disponible en `https://api.ultratv.neocities.org`. Todas las respuestas son en formato JSON y deben incluir la cabecera:
+La API está disponible en `api-futbol-espana.p.rapidapi.com`. Todas las respuestas son en formato JSON y deben incluir la cabecera:
 
 ```http
 Accept: application/json
@@ -142,24 +120,32 @@ Retorna la plantilla completa de un equipo específico.
 ### Consultar Tabla con curl
 
 ```bash
-curl -X GET "https://api.ultratv.neocities.org/api/liga/espana/tabla" \
-  -H "Accept: application/json"
+GET /api/liga/espana/:id/plantel HTTP/1.1
+X-Rapidapi-Key: TU API KEY
+X-Rapidapi-Host: api-futbol-espana.p.rapidapi.com
+Host: api-futbol-espana.p.rapidapi.com
+
 ```
 
 ### Consultar Plantel con JavaScript
 
 ```javascript
-const getTeamSquad = async (teamId) => {
-  try {
-    const response = await fetch(
-      `https://api.ultratv.neocities.org/api/liga/espana/${teamId}/plantel`
-    );
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error:', error);
-  }
-};
+const data = null;
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener('readystatechange', function () {
+	if (this.readyState === this.DONE) {
+		console.log(this.responseText);
+	}
+});
+
+xhr.open('GET', 'https://api-futbol-espana.p.rapidapi.com/api/liga/espana/:id/plantel');
+xhr.setRequestHeader('x-rapidapi-key', 'TU API KEY');
+xhr.setRequestHeader('x-rapidapi-host', 'api-futbol-espana.p.rapidapi.com');
+
+xhr.send(data);
 ```
 
 ## ❌ Respuestas de Error
@@ -186,7 +172,7 @@ La API utiliza códigos de estado HTTP estándar. Los errores son retornados en 
 
 ## ⚠️ Limitaciones de Uso
 
-- Máximo 100 solicitudes por minuto por IP
+- Máximo 500 solicitudes
 - Datos actualizados cada 5 minutos
 - Uso comercial requiere autorización previa
 
